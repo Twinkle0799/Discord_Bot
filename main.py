@@ -1,8 +1,14 @@
+import os
+
+#this is token you will get from discord developer portal, i just hide it from you so that u don't access my token
+my_secret = os.environ['TOKEN']
+
 #importing discord library
 import discord
 
 #connetion to client
 client  = discord.Client()
+
 
 @client.event
 async def on_ready():
@@ -16,4 +22,6 @@ async def on_message(msg):
     if str(msg.content).lower()=="hello":
       await msg.channel.send("Hello");
 
-client.run('ODU3NjI0MzkyOTg4MDk4NjMy.YNSS9Q.miEiDGH9olb7_-GhwqtHkEw07CU')
+
+client.run(my_secret)
+
