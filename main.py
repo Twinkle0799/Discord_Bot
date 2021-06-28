@@ -29,7 +29,13 @@ async def on_message(msg):
 async def on_reaction_add(reaction,user):
   await reaction.message.channel.send(str(user)+" reacted with "+reaction.emoji)
 
+@client.event
+async def on_message_edit(before,after):
+    await before.channel.send(str(before.author)+'edited a message.\nBefore: '+before.content+"\nAfter: "+ after.content)
 
 
+  
 client.run(my_secret)
 
+
+#reference udemy course
